@@ -1,13 +1,13 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/index")
 @app.route("/")
 def index():
-  return """<h1 style="color: #256;">Hi mom</h1>"""
+  return render_template("index.html")
 
 @app.route("/hi/<name>")
 def hi(name):
